@@ -5,6 +5,7 @@ import json
 import os
 import pickle
 import uuid
+from typing import Optional
 
 import bittensor as bt
 from pydantic import BaseModel
@@ -99,7 +100,7 @@ class ValiBkpUtils:
         return ValiBkpUtils.get_vali_outputs_dir() + "validator_checkpoint.json"
 
     @staticmethod
-    def get_miner_positions_output_path(suffix_dir: None | str = None) -> str:
+    def get_miner_positions_output_path(suffix_dir: Optional[str] = None) -> str:
         if suffix_dir is None:
             suffix = ''
         else:

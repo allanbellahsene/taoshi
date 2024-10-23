@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/Users/Rebecca/Desktop/bittensor/proprietary-trading-network/mining/run_receive_signals_server.py", line 9, in <module>
+    from miner_config import MinerConfig
+ModuleNotFoundError: No module named 'miner_config'
+Traceback (most recent call last):
+  File "/Users/Rebecca/Desktop/bittensor/proprietary-trading-network/mining/run_receive_signals_server.py", line 9, in <module>
+    from miner_config import MinerConfig
+ModuleNotFoundError: No module named 'miner_config'
