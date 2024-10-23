@@ -169,3 +169,5 @@ validation/miners/
 
 # macOS files
 .DS_Store
+
+.csv
