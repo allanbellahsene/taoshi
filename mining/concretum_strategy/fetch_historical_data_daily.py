@@ -4,7 +4,7 @@
 
 from   datetime import datetime, timedelta
 from research.historical_data import fetch_alpaca_data
-from mining.concretum_strategy.config import market_open, market_close, symbol
+from mining.concretum_strategy.config import market_open, market_close, symbol, HIST_DATA_PATH
 from mining.data_checks import check_data_freshness, validate_close_prices
 from mining.utils import ensure_folder_exists
 
@@ -39,10 +39,10 @@ def fetch_and_save_historical_bars():
     if not is_valid:
         print(mess)
 
-    ensure_folder_exists('historical_data')
+    ensure_folder_exists(HIST_DATA_PATH)
 
-    intra_data.to_csv(f'historical_data/{symbol}-{start_date}-{end_date}-1min.csv')
-    daily_data.to_csv(f'historical_data/{symbol}-{start_date}-{end_date}-1d.csv')
+    intra_data.to_csv(f'{HIST_DATA_PATH}{symbol}-{start_date}-{end_date}-1min.csv')
+    daily_data.to_csv(f'{HIST_DATA_PATH}{symbol}-{start_date}-{end_date}-1d.csv')
 
 if __name__ == "__main__":
     fetch_and_save_historical_bars()

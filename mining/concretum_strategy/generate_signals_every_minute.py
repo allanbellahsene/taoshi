@@ -1,33 +1,83 @@
-### This script generates intraday signals every minute based on the Concretum Intraday Momentum Strategy.
-### It must run every minute when the market is open.
+"""
+Concretum Intraday Momentum Strategy
+Generates intraday signals every minute during market hours.
 
-#First, the script checks what if today the market is open. (by taking into account weekends and holidays)
-#If no, it stops
-#If yes, it checks what time it is:
-#If it is 9:30, it simply records the open bars of the session
-#If it is later than 9:30 (and before 16:00), it proceeds with the trading strategy logic.
+The script:
+1. Validates if market is open
+2. Records opening data at market open (9:30 ET)
+3. Generates trading signals during regular session (9:31-16:00 ET)
+"""
+######## TO DO: 
+# - ADD VWAP
+# - ADD LOGIC TO ONLY TRIGGER SIGNALS AT 00 or 30 every hour
 
-import requests
-import pandas as pd
-from   datetime import datetime, timedelta,time
-import numpy as np
-#import statsmodels.api as sm
-from mining.utils import find_nearest_time, create_normalized_matrix
-from research.historical_data import fetch_alpaca_data
-from mining.concretum_strategy.config import market_open, market_close, symbol, rolling_window, band_mult
+import os
+import logging
+from dotenv import load_dotenv
+from mining.data_checks import MarketCalendar, is_market_open_today
+from mining.concretum_strategy.config import (
+    market_open,
+    market_close, 
+    symbol, 
+    rolling_window, 
+    band_mult
+)
+from mining.concretum_strategy.market_session import MarketSession
+from mining.concretum_strategy.signal_generator import SignalGenerator
+
+# Setup logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler('strategy.log'),
+        logging.StreamHandler()
+    ]
+)
+
+# Load environment variables
+load_dotenv()
+api_key = os.getenv("API_KEY")
+api_secret = os.getenv("API_SECRET")
+
+def main():
+    """Main execution function"""
+    try:
+        # Initialize components
+        calendar = MarketCalendar()
+        signal_generator = SignalGenerator()
+        
+        # Check if market is open
+        if not is_market_open_today(calendar):
+            logging.info('Market is closed today.')
+            return None
+            
+        # Get market session status
+        market_status = MarketSession.get_session_status()
+        
+        if market_status == "CLOSED":
+            logging.info('Outside trading hours')
+            return None
+            
+        # Handle appropriate session
+        if market_status == "OPENING":
+            return signal_generator.handle_market_opening()
+        elif market_status == "REGULAR":
+            return signal_generator.handle_regular_session()
+        else:
+            logging.error(f'{market_status} is not an accepted market status. Market status can be "OPENING", "REGULAR" or "CLOSED".')
+            
+    except Exception as e:
+        logging.error(f"Critical error in main execution: {str(e)}")
+        raise
+
+if __name__ == "__main__":
+    main()
 
 
-today = datetime.today()
-start_date = today - timedelta(days=100)
-end_date = today
-start_date          =  start_date.strftime('%Y-%m-%d')
-end_date            =  end_date.strftime('%Y-%m-%d')
-
-intra_data = pd.read_csv(f'historical_data/{symbol}-{start_date}-{end_date}-1min.csv')
-daily_data = pd.read_csv(f'historical_data/{symbol}-{start_date}-{end_date}-1d.csv')
 
 
-last_intra_close = intra_data.close.iloc[-1]
-last_daily_close = daily_data.close.iloc[-1]
 
-# Check what day we are and what time it is 
+
+
+

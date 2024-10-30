@@ -94,6 +94,39 @@ def get_previous_trading_day(dt: datetime, market_calendar: MarketCalendar) -> d
     
     return prev_day
 
+def is_market_open_today(market_calendar: MarketCalendar) -> bool:
+    """
+    Check if the market is open today
+    
+    Returns:
+    bool: True if market is open, False if closed
+    """
+    ny_time = datetime.now(pytz.timezone('America/New_York'))
+    
+    # Check if it's a weekend
+    if ny_time.weekday() >= 5:
+        return False
+        
+    # Check if it's a holiday
+    holidays = market_calendar.get_us_market_holidays(ny_time.year)
+    if ny_time.date() in [h.date() for h in holidays]:
+        return False
+        
+    return True
+
+def get_ny_time() -> Tuple[datetime, str]:
+    """
+    Get current New York time
+    
+    Returns:
+    Tuple[datetime, str]: Current NY datetime and formatted time string
+    """
+    ny_tz = pytz.timezone('America/New_York')
+    ny_time = datetime.now(ny_tz)
+    formatted_time = ny_time.strftime("%Y-%m-%d %I:%M:%S %p %Z")
+    
+    return ny_time, formatted_time
+
 def validate_last_row_date(df: pd.DataFrame) -> Tuple[bool, str]:
     """
     Validates if the last row of the DataFrame contains the most recent market close data.
