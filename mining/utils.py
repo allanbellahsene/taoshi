@@ -3,10 +3,9 @@ import pytz
 import os
 import glob
 from datetime import datetime
-import os
 import glob
-from datetime import datetime
-
+from pathlib import Path
+import logging
 
 def find_nearest_time(
     df: pd.DataFrame,
@@ -133,8 +132,6 @@ def create_normalized_matrix(intraday_df: pd.DataFrame,
     
     return pivot_df
 
-from pathlib import Path
-import logging
 
 def ensure_folder_exists(folder_path: str) -> bool:
     """
@@ -166,9 +163,6 @@ def ensure_folder_exists(folder_path: str) -> bool:
     except Exception as e:
         print(f"Error creating folder {folder_path}: {str(e)}")
         return False
-
-import os
-from datetime import datetime
 
 def get_most_recent_signal_file(directory_path):
     """
