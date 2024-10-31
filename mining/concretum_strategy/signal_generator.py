@@ -34,7 +34,7 @@ class SignalGenerator:
         self.position_sizing = PositionSizing()
         self.intra_data, self.daily_data = self.data_manager.load_historical_data()
         self.current_position = 0
-        self.current_vol = position_sizing.calculate_daily_vol()
+        self.current_vol = self.position_sizing.calculate_daily_vol(self.daily_data)
 
     def calculate_vwap(self, data):
         """Calculate VWAP based on current day's data"""
@@ -120,7 +120,11 @@ class SignalGenerator:
     def generate_signal(self, current_close, upper_bound, lower_bound, vwap):
         """Generate trading signal based on price levels"""
 
+        signal = self.current_position
+        position_size = 0
+
         #Entry signals when no position
+
 
         if self.current_position == 0:
             if current_close > upper_bound:
@@ -145,13 +149,13 @@ class SignalGenerator:
         
         if self.current_position != signal:
             position_size = position_sizing.calculate_size(signal, self.current_vol)
-            signal_type = 'entry' if self.current_position = 0 else 'exit'
+            signal_type = 'entry' if self.current_position == 0 else 'exit'
             signal_data = map_signal_data(symbol, position_size, signal_type, signal)
             signal_json = send_signals(signal_data)
             logging.info(signal_json)
             self.current_position = signal
         
-        return self.current_position, position_size
+        return signal, position_size
         
     def record_signal_metadata(self, signal, pos_size, today_open, current_close, 
                              yesterday_close, upper_bound, lower_bound, sigma, volume, vwap, avg_price):
