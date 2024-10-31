@@ -1,26 +1,18 @@
 import os
 import logging
-import shutil
 import pytz
 import numpy as np
 import pandas as pd
-from datetime import datetime, timedelta, time
-import alpaca_trade_api as alpacaapi
-from dotenv import load_dotenv
+from datetime import datetime
 from mining.utils import create_normalized_matrix
-from mining.data_checks import MarketCalendar, is_market_open_today
 from mining.concretum_strategy.config import (
-    market_open,
-    market_close, 
     symbol, 
     rolling_window, 
     band_mult,
     LIVE_DATA_PATH,
-    HIST_DATA_PATH,
     SIGNALS_PATH
 )
 from mining.concretum_strategy.data_manager import DataManager
-from mining.concretum_strategy.market_session import MarketSession
 
 # Setup logging
 logging.basicConfig(
@@ -38,6 +30,14 @@ class SignalGenerator:
     def __init__(self):
         self.data_manager = DataManager()
         self.intra_data, self.daily_data = self.data_manager.load_historical_data()
+        self.current_position = 0
+
+    def calculate_vwap(self, data):
+        """Calculate VWAP based on current day's data"""
+        data['pv'] = data['close'] * data['volume']
+        cumulative_pv = data['pv'].sum()
+        cumulative_volume = data['volume'].sum()
+        return cumulative_pv / cumulative_volume if cumulative_volume > 0 else 0
         
     def handle_market_opening(self):
         """Handle market opening data collection"""
@@ -58,6 +58,12 @@ class SignalGenerator:
             print(f'End date: {self.data_manager.end_date}')
             open_data = pd.read_csv(f'{LIVE_DATA_PATH}{symbol}-{self.data_manager.end_date}-open_live-data.csv')
             current_bars = self.data_manager.get_live_data()
+
+            try:
+                cumulative_data = pd.read_csv(f'{SIGNALS_PATH}signal_history_{self.data_manager.end_date}.csv')
+                vwap = self.calculate_vwap(cumulative_data)
+            except:
+                vwap = None
             
             # Calculate parameters
             current_time = datetime.now(pytz.timezone('America/New_York')).strftime('%H:%M')
@@ -67,6 +73,7 @@ class SignalGenerator:
             # Get key prices
             today_open = open_data.open[0]
             current_close = current_bars['close'][0]
+            volume = current_bars['volume'][0]
             yesterday_close = self.daily_data.close.iloc[-1]
             sigma = avg_move_from_open.loc[current_time].values[0]
             
@@ -78,12 +85,12 @@ class SignalGenerator:
             lower_bound = np.minimum(today_open, yesterday_close) * (1 - band_mult * sigma)
             
             # Generate signal
-            signal = self.generate_signal(current_close, upper_bound, lower_bound)
+            signal = self.generate_signal(current_close, upper_bound, lower_bound, vwap)
             
             # Record metadata
             metadata = self.record_signal_metadata(
                 signal, today_open, current_close, yesterday_close,
-                upper_bound, lower_bound, sigma
+                upper_bound, lower_bound, sigma, volume, vwap
             )
             
             return signal, metadata
@@ -102,17 +109,30 @@ class SignalGenerator:
         if sigma < 0:
             raise ValueError("Sigma must be non-negative")
             
-    @staticmethod
-    def generate_signal(current_close, upper_bound, lower_bound):
+    def generate_signal(self, current_close, upper_bound, lower_bound, vwap):
         """Generate trading signal based on price levels"""
-        if current_close > upper_bound:
-            return 1
-        elif current_close < lower_bound:
-            return -1
-        return 0
+
+        if self.current_position == 0:
+            if current_close > upper_bound:
+                self.current_position = 1
+            elif current_close < lower_bound:
+                self.current_position == -1
+        else:
+            if vwap is None:
+                if self.current_position == 1 and current_close < upper_bound:
+                    self.current_position = 0
+                elif self.current_position == -1 and current_close > lower_bound:
+                    self.current_position = 0
+            else:
+                if self.current_position == 1 and current_close < np.maximum(vwap, upper_bound):
+                    self.current_position = 0
+                elif self.current_position == -1 and current_close > np.minimum(vwap, lower_bound):
+                    self.current_position = 0
+        
+        return self.current_position
         
     def record_signal_metadata(self, signal, today_open, current_close, 
-                             yesterday_close, upper_bound, lower_bound, sigma):
+                             yesterday_close, upper_bound, lower_bound, sigma, volume, vwap):
         """Record signal metadata for logging and analysis"""
         metadata = {
             'timestamp': datetime.now(pytz.timezone('America/New_York')),
@@ -122,7 +142,9 @@ class SignalGenerator:
             'upper_bound': upper_bound,
             'lower_bound': lower_bound,
             'sigma': sigma,
-            'signal': signal
+            'signal': signal,
+            'volume': volume,
+            'vwap': vwap
         }
         
         # Log signal
@@ -161,10 +183,4 @@ if __name__ == "__main__":
 
     upper_bound = np.maximum(today_open, yesterday_close) * (1 + band_mult * sigma)
     lower_bound = np.minimum(today_open, yesterday_close) * (1 - band_mult * sigma)
-
-
-    #print(signal_generator.validate_inputs(today_open, yesterday_close, current_close, sigma))
-    #signal = signal_generator.generate_signal(current_close, upper_bound, lower_bound)
-    #signal_generator.record_signal_metadata(signal, today_open, current_close, 
-    #                         yesterday_close, upper_bound, lower_bound, sigma)
 

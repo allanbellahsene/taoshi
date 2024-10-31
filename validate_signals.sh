@@ -17,7 +17,7 @@ eval "$(/root/anaconda3/condabin/conda shell.bash hook)"
 conda activate myenv
 
 # Run the Python script
-python3 -m mining.concretum_strategy.fetch_historical_data_daily
+python3 -m mining.concretum_strategy.signal_validator
 
 # Capture the exit status
 STATUS=$?

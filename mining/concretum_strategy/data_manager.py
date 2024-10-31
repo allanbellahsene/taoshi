@@ -43,7 +43,8 @@ class DataManager:
                 "open": [latest_bar.o],
                 "high": [latest_bar.h],
                 "low": [latest_bar.l],
-                "close": [latest_bar.c]
+                "close": [latest_bar.c],
+                "volume": [latest_bar.v]
             }
         except Exception as e:
             logging.error(f"Error fetching live data: {str(e)}")

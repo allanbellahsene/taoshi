@@ -1,5 +1,8 @@
 import pandas as pd
 import pytz
+import os
+import glob
+from datetime import datetime
 
 
 def find_nearest_time(
@@ -160,3 +163,44 @@ def ensure_folder_exists(folder_path: str) -> bool:
     except Exception as e:
         print(f"Error creating folder {folder_path}: {str(e)}")
         return False
+
+import os
+from datetime import datetime
+
+def get_most_recent_signal_file(directory_path):
+    """
+    Returns the filename of the most recent signal history file in the given directory.
+    Expects files to be named in the format: signal_history_YYYY-MM-DD.csv
+    
+    Args:
+        directory_path (str): Path to the directory containing signal history files
+        
+    Returns:
+        str: Filename of the most recent signal history file
+        
+    Raises:
+        ValueError: If no signal history files are found in the directory
+    """
+    # Get all csv files in the directory
+    signal_files = [f for f in os.listdir(directory_path) 
+                   if f.startswith('signal_history_') and f.endswith('.csv')]
+    
+    if not signal_files:
+        raise ValueError("No signal history files found in directory")
+    
+    # Extract date from filename and create (date, filename) tuples
+    dated_files = []
+    for filename in signal_files:
+        try:
+            # Extract date string from filename (format: YYYY-MM-DD)
+            date_str = filename.replace('signal_history_', '').replace('.csv', '')
+            file_date = datetime.strptime(date_str, '%Y-%m-%d')
+            dated_files.append((file_date, filename))
+        except ValueError:
+            continue
+    
+    if not dated_files:
+        raise ValueError("No valid date-formatted signal history files found")
+    
+    # Return filename with most recent date
+    return max(dated_files, key=lambda x: x[0])[1]

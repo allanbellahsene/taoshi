@@ -10,8 +10,8 @@ echo "Current directory: $(pwd)"
 echo "User: $(whoami)"
 echo "PATH: $PATH"
 
-# Source conda base initialization
-source /home/ubuntu/miniconda3/etc/profile.d/conda.sh
+# Initialize conda
+eval "$(/root/anaconda3/condabin/conda shell.bash hook)"
 
 # Activate the conda environment
 conda activate myenv

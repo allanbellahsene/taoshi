@@ -1,9 +1,10 @@
 from   datetime import time
 
-DIR_PATH = '/home/ubuntu/taoshi/mining/concretum_strategy/'
+DIR_PATH = '/root/taoshi/mining/concretum_strategy/'
 HIST_DATA_PATH = DIR_PATH + 'historical_data/'
 LIVE_DATA_PATH = DIR_PATH + 'live_data/'
 SIGNALS_PATH = DIR_PATH + 'signals_data/'
+SIGNALS_PLOT_PATH = DIR_PATH + 'signals_plot/'
 
 
 API_KEY     = "AK1TXEM0NSG8T5O9DC8U"
