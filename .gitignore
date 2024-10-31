@@ -173,4 +173,17 @@ validation/miners/
 .csv
 
 # Anaconda installer
-Anaconda3-2024.02-1-Linux-x86_64.sh
+Anaconda3-2024.02-1-Linux-x86_64.shmining/concretum_strategy/live_data/
+mining/concretum_strategy/signals_data/
+
+mining/concretum_strategy/live_data/
+mining/concretum_strategy/signals_data/
+*.csv
+
+# Anaconda
+Anaconda3-*
+
+# Python temporary files
+__pycache__/
+*.py[cod]
+*$py.class
