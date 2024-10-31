@@ -1,5 +1,8 @@
 import pandas as pd
 import pytz
+import os
+import glob
+from datetime import datetime
 
 
 def find_nearest_time(
@@ -160,3 +163,34 @@ def ensure_folder_exists(folder_path: str) -> bool:
     except Exception as e:
         print(f"Error creating folder {folder_path}: {str(e)}")
         return False
+
+def get_latest_csv(folder_path):
+    """
+    Get the CSV file with the most recent date from the specified folder.
+    Files should follow the format: 'common_name-date.csv'
+    
+    Args:
+        folder_path (str): Path to the folder containing CSV files
+        
+    Returns:
+        str: Path to the most recent CSV file, or None if no CSV files found
+    """
+    # Get all CSV files in the folder
+    pattern = os.path.join(folder_path, "*.csv")
+    csv_files = glob.glob(pattern)
+    
+    if not csv_files:
+        return None
+    
+    # Extract dates from filenames and pair with full paths
+    def extract_date(filepath):
+        filename = os.path.basename(filepath)
+        date_str = filename.split('-')[1].replace('.csv', '')
+        return datetime.strptime(date_str, '%Y%m%d')
+    
+    try:
+        # Sort files by date and get the most recent
+        latest_file = max(csv_files, key=extract_date)
+        return latest_file
+    except (ValueError, IndexError):
+        return None

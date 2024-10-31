@@ -15,13 +15,6 @@ import os
 import logging
 from dotenv import load_dotenv
 from mining.data_checks import MarketCalendar, is_market_open_today
-from mining.concretum_strategy.config import (
-    market_open,
-    market_close, 
-    symbol, 
-    rolling_window, 
-    band_mult
-)
 from mining.concretum_strategy.market_session import MarketSession
 from mining.concretum_strategy.signal_generator import SignalGenerator
 

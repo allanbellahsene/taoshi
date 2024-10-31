@@ -1,26 +1,18 @@
 import os
 import logging
-import shutil
 import pytz
 import numpy as np
 import pandas as pd
-from datetime import datetime, timedelta, time
-import alpaca_trade_api as alpacaapi
-from dotenv import load_dotenv
+from datetime import datetime
 from mining.utils import create_normalized_matrix
-from mining.data_checks import MarketCalendar, is_market_open_today
 from mining.concretum_strategy.config import (
-    market_open,
-    market_close, 
     symbol, 
     rolling_window, 
     band_mult,
     LIVE_DATA_PATH,
-    HIST_DATA_PATH,
     SIGNALS_PATH
 )
 from mining.concretum_strategy.data_manager import DataManager
-from mining.concretum_strategy.market_session import MarketSession
 
 # Setup logging
 logging.basicConfig(
