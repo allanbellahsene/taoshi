@@ -1,21 +1,29 @@
 #!/bin/bash
 
-while true; do
-    echo "Starting Python script..."
-    . venv/bin/activate
-    python -m pip install -e .
-    nohup venv/bin/python mining/run_receive_signals_server.py &
-    PID=$!
-    echo "Python script started with PID: $PID"
+# Set timezone at the start of the script
+export TZ=America/New_York
 
-    # Wait for the process to finish
-    wait $PID
+echo "=== Job started at $(date) ==="
+echo "New York time: $(TZ=America/New_York date)"
+echo "UTC time: $(TZ=UTC date)"
+echo "Current directory: $(pwd)"
+echo "User: $(whoami)"
+echo "PATH: $PATH"
 
-    # Check if the process is still running
-    if ps -p $PID > /dev/null; then
-        echo "Python script is still running, not restarting."
-    else
-        echo "Python script stopped, restarting in 5 seconds..."
-        sleep 5
-    fi
-done
+# Initialize conda
+eval "$(/root/anaconda3/condabin/conda shell.bash hook)"
+
+# Activate the conda environment
+conda activate myenv
+
+# Run the Python script
+python3 -m mining.run_receive_signals_server
+
+# Capture the exit status
+STATUS=$?
+
+# Deactivate conda environment
+conda deactivate
+
+echo "Exit status: $STATUS"
+echo "=== Job finished at $(date) ==="

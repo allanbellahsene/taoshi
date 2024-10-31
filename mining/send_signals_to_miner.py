@@ -51,7 +51,7 @@ class CustomEncoder(json.JSONEncoder):
         # Let the base class default method raise the TypeError
         return json.JSONEncoder.default(self, obj)
 
-if __name__ == "__main__":
+def send_signals(data):
     # Set the default URL endpoint
     default_base_url = 'http://127.0.0.1:5000'
 
@@ -66,14 +66,6 @@ if __name__ == "__main__":
     print("base URL endpoint:", base_url)
 
     url = f'{base_url}/api/receive-signal'
-
-    # Define the JSON data to be sent in the request
-    data = {
-        'trade_pair': TradePair.BTCUSD,
-        'order_type': OrderType.LONG,
-        'leverage': .01,
-        'api_key': api_key
-    }
 
     # Convert the Python dictionary to JSON format
     json_data = json.dumps(data, cls=CustomEncoder)
@@ -91,6 +83,54 @@ if __name__ == "__main__":
         print("POST request was successful.")
         print("Response:")
         print(response.json())  # Print the response data
+        return response.json()
     else:
         print(response.__dict__)
         print("POST request failed with status code:", response.status_code)
+
+
+def map_signal_data(symbol, position_size, signal_type, signal_direction):
+    if symbol == 'SPY':
+        trade_pair = TradePair.SPX
+    elif symbol == 'BTCUSDT':
+        trade_pair = TradePair.BTCUSD
+    else:
+        raise ValueError(f'For now, symbol can only be SPY or BTCUSDT')
+    
+    if signal_type == 'entry':
+        if signal_direction == 1:
+            order_type = OrderType.LONG
+        elif signal_direction == -1:
+            order_type = OrderType.SHORT
+        elif signal_direction == 0:
+            return
+        else:
+            raise ValueError(f'Signal can only be 0, 1 or -1')
+    
+    elif signal_type == 'exit':
+        order_type = OrderType.FLAT
+    
+    else:
+        raise ValueError(f'Signal type can only be entry or exit')
+    
+    data = {
+        'trade_pair': trade_pair,
+        'order_type': order_type,
+        'leverage': position_size,
+        'api_key': api_key
+    }
+
+    return data
+
+if __name__ == "__main__":
+    # Define the JSON data to be sent in the request
+    symbol = 'SPY'
+    position_size = 0.5
+    signal_type = 'entry'
+    signal_direction = -1
+    
+    data = map_signal_data(symbol, position_size, signal_type, signal_direction)
+
+    print(data)
+
+    send_signals(data)

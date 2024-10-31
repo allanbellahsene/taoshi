@@ -143,8 +143,7 @@ class DataManager:
                         latest_file = filename
             except (ValueError, IndexError):
                 continue
-        
-        print(latest_file)
+    
                 
         return latest_file[:-9] if latest_file else None
 
