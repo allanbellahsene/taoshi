@@ -28,8 +28,8 @@ class PositionSizing:
 
         return vol
 
-    def calculate_size(self, signal, vol_estimate):
-        return signal * np.minimum(self.max_leverage, self.vol_target / vol_estimate)
+    def calculate_size(self, vol_estimate):
+        return np.minimum(self.max_leverage, self.vol_target / vol_estimate)
 
 if __name__ == "__main__":
     from mining.concretum_strategy.data_manager import DataManager

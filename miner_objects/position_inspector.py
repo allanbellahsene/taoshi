@@ -145,3 +145,61 @@ class PositionInspector:
 
         self.last_update_time = time.time()
         bt.logging.success("PositionInspector successfully completed signal processing.")
+
+
+if __name__ == "__main__":
+    def get_config():
+        parser = argparse.ArgumentParser()
+        # Adds override arguments for network and netuid.
+        parser.add_argument("--netuid", type=int, default=1, help="The chain subnet uid.")
+        # Adds subtensor specific arguments i.e. --subtensor.chain_endpoint ... --subtensor.network ...
+        bt.subtensor.add_args(parser)
+        # Adds logging specific arguments i.e. --logging.debug ..., --logging.trace .. or --logging.logging_dir ...
+        bt.logging.add_args(parser)
+        # Adds wallet specific arguments i.e. --wallet.name ..., --wallet.hotkey ./. or --wallet.path ...
+        bt.wallet.add_args(parser)
+        # Adds an argument to allow setting write_failed_signal_logs from the command line
+        # We use a placeholder default value here (None) to check if the user has provided a value later
+        parser.add_argument("--write_failed_signal_logs", type=bool, default=None,
+                            help="Whether to write logs for failed signals. Default is True unless --subtensor.network is 'test'.")
+        parser.add_argument(
+            '--start-dashboard',
+            action='store_true',
+            help='Start the miner-dashboard along with the miner.'
+        )
+
+        # Parse the config (will take command-line arguments if provided)
+        # To print help message, run python3 template/miner.py --help
+        config = bt.config(parser)
+        bt.logging.enable_default()
+        if config.logging.debug:
+            bt.logging.enable_debug()
+        if config.logging.trace:
+            bt.logging.enable_trace()
+
+        # Determine the default value for write_failed_signal_logs based on the subtensor.network,
+        # but only if the user hasn't explicitly set it via command line.
+        if config.write_failed_signal_logs is None:
+            config.write_failed_signal_logs = False if config.subtensor.network == "test" else True
+
+        # Step 3: Set up logging directory
+        # Logging is crucial for monitoring and debugging purposes.
+        config.full_path = os.path.expanduser(
+            "{}/{}/{}/netuid{}/{}".format(
+                config.logging.logging_dir,
+                config.wallet.name,
+                config.wallet.hotkey,
+                config.netuid,
+                "miner",
+            )
+        )
+        return config
+    config = get_config()
+    wallet = bt.wallet(config=config)
+    subtensor = bt.subtensor(config=config)
+    
+    # Setup metagraph
+    metagraph = subtensor.metagraph(netuid=config.netuid)
+    metagraph.sync()
+    position_inspector = PositionInspector(wallet, metagraph, config)
+    

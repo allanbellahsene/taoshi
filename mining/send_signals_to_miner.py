@@ -89,7 +89,11 @@ def send_signals(data):
         print("POST request failed with status code:", response.status_code)
 
 
-def map_signal_data(symbol, position_size, signal_type, signal_direction):
+def map_signal_data(symbol, current_position, position_size, signal_type, signal_direction):
+    """
+    If signal_type is 'entry', signal_direction is the relevant object. Trade is taken at the same direction of signal_direction.
+    If signal_type is 'exit', current_position is the relevant object. Trade is taken at the opposite direction of current_position.
+    """
     if symbol == 'SPY':
         trade_pair = TradePair.SPX
     elif symbol == 'BTCUSDT':
@@ -98,6 +102,7 @@ def map_signal_data(symbol, position_size, signal_type, signal_direction):
         raise ValueError(f'For now, symbol can only be SPY or BTCUSDT')
     
     if signal_type == 'entry':
+        position_size = signal_direction * position_size
         if signal_direction == 1:
             order_type = OrderType.LONG
         elif signal_direction == -1:
@@ -108,6 +113,7 @@ def map_signal_data(symbol, position_size, signal_type, signal_direction):
             raise ValueError(f'Signal can only be 0, 1 or -1')
     
     elif signal_type == 'exit':
+        position_size = -current_position * position_size
         order_type = OrderType.FLAT
     
     else:

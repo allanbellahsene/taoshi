@@ -6,3 +6,241 @@ Traceback (most recent call last):
   File "/Users/Rebecca/Desktop/bittensor/proprietary-trading-network/mining/run_receive_signals_server.py", line 9, in <module>
     from miner_config import MinerConfig
 ModuleNotFoundError: No module named 'miner_config'
+=== Job started at Fri Nov  1 03:26:46 AM EDT 2024 ===
+New York time: Fri Nov  1 03:26:46 AM EDT 2024
+UTC time: Fri Nov  1 07:26:46 AM UTC 2024
+Current directory: /root/taoshi
+User: root
+PATH: /root/anaconda3/envs/myenv/bin:/root/.vscode-server/cli/servers/Stable-4849ca9bdf9666755eb463db297b69e5385090e3/server/bin/remote-cli:/root/anaconda3/condabin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Successfully started run_receive_signals_server.
+Exit status: 0
+=== Job finished at Fri Nov  1 03:26:57 AM EDT 2024 ===
+=== Job started at Fri Nov  1 03:26:59 AM EDT 2024 ===
+New York time: Fri Nov  1 03:26:59 AM EDT 2024
+UTC time: Fri Nov  1 07:26:59 AM UTC 2024
+Current directory: /root/taoshi
+User: root
+PATH: /root/anaconda3/envs/myenv/bin:/root/.vscode-server/cli/servers/Stable-4849ca9bdf9666755eb463db297b69e5385090e3/server/bin/remote-cli:/root/anaconda3/condabin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+received data: {'trade_pair': {'trade_pair_id': 'BTCUSD', 'trade_pair': 'BTC/USD', 'fees': 0.001, 'min_leverage': 0.01, 'max_leverage': 0.5, 'trade_pair_category': 'crypto'}, 'order_type': 'FLAT', 'leverage': 0.01, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'LONG', 'leverage': 3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'LONG', 'leverage': 3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'LONG', 'leverage': 3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'LONG', 'leverage': 3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'LONG', 'leverage': 3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'LONG', 'leverage': 3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'LONG', 'leverage': 3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'LONG', 'leverage': 3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'LONG', 'leverage': 3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'LONG', 'leverage': 3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'LONG', 'leverage': 3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'LONG', 'leverage': 3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'LONG', 'leverage': 3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'LONG', 'leverage': 3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'LONG', 'leverage': 3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'LONG', 'leverage': 3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'LONG', 'leverage': 3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'LONG', 'leverage': 3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'LONG', 'leverage': 3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'LONG', 'leverage': 3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'LONG', 'leverage': 3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'LONG', 'leverage': 3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'LONG', 'leverage': 3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'LONG', 'leverage': 3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'LONG', 'leverage': 3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'LONG', 'leverage': 3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'LONG', 'leverage': 3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'LONG', 'leverage': 3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'LONG', 'leverage': 3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'LONG', 'leverage': 3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'LONG', 'leverage': 3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'LONG', 'leverage': 3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'LONG', 'leverage': 3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'LONG', 'leverage': 3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'LONG', 'leverage': 3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'LONG', 'leverage': 3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'LONG', 'leverage': 3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'LONG', 'leverage': 3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'LONG', 'leverage': 3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'LONG', 'leverage': 3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'LONG', 'leverage': 3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'LONG', 'leverage': 3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'LONG', 'leverage': 3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'LONG', 'leverage': 3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'LONG', 'leverage': 3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'LONG', 'leverage': 3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'LONG', 'leverage': 3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'LONG', 'leverage': 3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'LONG', 'leverage': 3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'LONG', 'leverage': 3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'FLAT', 'leverage': 0.0, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'LONG', 'leverage': 3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'FLAT', 'leverage': 0.0, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'LONG', 'leverage': 3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'FLAT', 'leverage': 0.0, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'LONG', 'leverage': 3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'FLAT', 'leverage': -3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'LONG', 'leverage': 3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+=== Job started at Fri Nov  1 11:23:17 AM EDT 2024 ===
+New York time: Fri Nov  1 11:23:17 AM EDT 2024
+UTC time: Fri Nov  1 03:23:17 PM UTC 2024
+Current directory: /root/taoshi
+User: root
+PATH: /root/.vscode-server/cli/servers/Stable-4849ca9bdf9666755eb463db297b69e5385090e3/server/bin/remote-cli:/root/anaconda3/bin:/root/anaconda3/condabin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /root/anaconda3/envs/myenv/lib/python3.10/runpy.py:196 in                    │
+│ _run_module_as_main                                                          │
+│                                                                              │
+│   193 │   main_globals = sys.modules["__main__"].__dict__                    │
+│   194 │   if alter_argv:                                                     │
+│   195 │   │   sys.argv[0] = mod_spec.origin                                  │
+│ ❱ 196 │   return _run_code(code, main_globals, None,                         │
+│   197 │   │   │   │   │    "__main__", mod_spec)                             │
+│   198                                                                        │
+│   199 def run_module(mod_name, init_globals=None,                            │
+│                                                                              │
+│ /root/anaconda3/envs/myenv/lib/python3.10/runpy.py:86 in _run_code           │
+│                                                                              │
+│    83 │   │   │   │   │      __loader__ = loader,                            │
+│    84 │   │   │   │   │      __package__ = pkg_name,                         │
+│    85 │   │   │   │   │      __spec__ = mod_spec)                            │
+│ ❱  86 │   exec(code, run_globals)                                            │
+│    87 │   return run_globals                                                 │
+│    88                                                                        │
+│    89 def _run_module_code(code, init_globals=None,                          │
+│                                                                              │
+│ /root/taoshi/mining/run_receive_signals_server.py:85 in <module>             │
+│                                                                              │
+│   82 │   )                                                                   │
+│   83                                                                         │
+│   84 if __name__ == "__main__":                                              │
+│ ❱ 85 │   waitress.serve(app, host="0.0.0.0", port=5000, connection_limit=100 │
+│   86 │   print('Successfully started run_receive_signals_server.')           │
+│   87                                                                         │
+│                                                                              │
+│ /root/anaconda3/envs/myenv/lib/python3.10/site-packages/waitress/__init__.py │
+│ :13 in serve                                                                 │
+│                                                                              │
+│   10 │   if not _quiet:  # pragma: no cover                                  │
+│   11 │   │   # idempotent if logging has already been set up                 │
+│   12 │   │   logging.basicConfig()                                           │
+│ ❱ 13 │   server = _server(app, **kw)                                         │
+│   14 │   if not _quiet:  # pragma: no cover                                  │
+│   15 │   │   server.print_listen("Serving on http://{}:{}")                  │
+│   16 │   if _profile:  # pragma: no cover                                    │
+│                                                                              │
+│ /root/anaconda3/envs/myenv/lib/python3.10/site-packages/waitress/server.py:7 │
+│ 8 in create_server                                                           │
+│                                                                              │
+│    75 │   │   │   # When TcpWSGIServer is called, it registers itself in the │
+│    76 │   │   │   # side-effect is all we need it for, so we don't store a r │
+│    77 │   │   │   # or return it to the user.                                │
+│ ❱  78 │   │   │   last_serv = TcpWSGIServer(                                 │
+│    79 │   │   │   │   application,                                           │
+│    80 │   │   │   │   map,                                                   │
+│    81 │   │   │   │   _start,                                                │
+│                                                                              │
+│ /root/anaconda3/envs/myenv/lib/python3.10/site-packages/waitress/server.py:2 │
+│ 44 in __init__                                                               │
+│                                                                              │
+│   241 │   │   self.set_reuse_addr()                                          │
+│   242 │   │                                                                  │
+│   243 │   │   if bind_socket:                                                │
+│ ❱ 244 │   │   │   self.bind_server_socket()                                  │
+│   245 │   │                                                                  │
+│   246 │   │   self.effective_host, self.effective_port = self.getsockname()  │
+│   247 │   │   self.server_name = adj.server_name                             │
+│                                                                              │
+│ /root/anaconda3/envs/myenv/lib/python3.10/site-packages/waitress/server.py:3 │
+│ 61 in bind_server_socket                                                     │
+│                                                                              │
+│   358 class TcpWSGIServer(BaseWSGIServer):                                   │
+│   359 │   def bind_server_socket(self):                                      │
+│   360 │   │   (_, _, _, sockaddr) = self.sockinfo                            │
+│ ❱ 361 │   │   self.bind(sockaddr)                                            │
+│   362 │                                                                      │
+│   363 │   def getsockname(self):                                             │
+│   364 │   │   # Return the IP address, port as numeric                       │
+│                                                                              │
+│ /root/anaconda3/envs/myenv/lib/python3.10/site-packages/waitress/wasyncore.p │
+│ y:396 in bind                                                                │
+│                                                                              │
+│   393 │                                                                      │
+│   394 │   def bind(self, addr):                                              │
+│   395 │   │   self.addr = addr                                               │
+│ ❱ 396 │   │   return self.socket.bind(addr)                                  │
+│   397 │                                                                      │
+│   398 │   def connect(self, address):                                        │
+│   399 │   │   self.connected = False                                         │
+╰──────────────────────────────────────────────────────────────────────────────╯
+OSError: [Errno 98] Address already in use
+Exit status: 1
+=== Job finished at Fri Nov  1 11:23:20 AM EDT 2024 ===
+=== Job started at Fri Nov  1 11:26:42 AM EDT 2024 ===
+New York time: Fri Nov  1 11:26:42 AM EDT 2024
+UTC time: Fri Nov  1 03:26:42 PM UTC 2024
+Current directory: /root/taoshi
+User: root
+PATH: /root/.vscode-server/cli/servers/Stable-4849ca9bdf9666755eb463db297b69e5385090e3/server/bin/remote-cli:/root/anaconda3/bin:/root/anaconda3/condabin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'FLAT', 'leverage': -3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'FLAT', 'leverage': -3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}received data:
+ {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'FLAT', 'leverage': -3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'FLAT', 'leverage': -3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'FLAT', 'leverage': -3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'FLAT', 'leverage': -3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'FLAT', 'leverage': -3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'FLAT', 'leverage': -3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'LONG', 'leverage': 3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'FLAT', 'leverage': -3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'LONG', 'leverage': 3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'FLAT', 'leverage': -3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'LONG', 'leverage': 3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'FLAT', 'leverage': -3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'LONG', 'leverage': 3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'FLAT', 'leverage': -3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'LONG', 'leverage': 3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'FLAT', 'leverage': -3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'LONG', 'leverage': 3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'FLAT', 'leverage': -3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'LONG', 'leverage': 3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'FLAT', 'leverage': -3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'LONG', 'leverage': 3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'FLAT', 'leverage': -3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'LONG', 'leverage': 3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'FLAT', 'leverage': -3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'LONG', 'leverage': 3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'FLAT', 'leverage': -3.116859839330131, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'SHORT', 'leverage': -3.1285344073494294, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'FLAT', 'leverage': 3.1285344073494294, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+=== Job started at Mon Nov  4 10:46:46 AM EST 2024 ===
+New York time: Mon Nov  4 10:46:46 AM EST 2024
+UTC time: Mon Nov  4 03:46:46 PM UTC 2024
+Current directory: /root/taoshi
+User: root
+PATH: /root/anaconda3/envs/myenv/bin:/root/.vscode-server/cli/servers/Stable-4849ca9bdf9666755eb463db297b69e5385090e3/server/bin/remote-cli:/root/anaconda3/condabin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+received data: {'trade_pair': {'trade_pair_id': 'BTCUSD', 'trade_pair': 'BTC/USD', 'fees': 0.001, 'min_leverage': 0.01, 'max_leverage': 0.5, 'trade_pair_category': 'crypto'}, 'order_type': 'SHORT', 'leverage': 0.01, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'BTCUSD', 'trade_pair': 'BTC/USD', 'fees': 0.001, 'min_leverage': 0.01, 'max_leverage': 0.5, 'trade_pair_category': 'crypto'}, 'order_type': 'FLAT', 'leverage': 0.01, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'BTCUSD', 'trade_pair': 'BTC/USD', 'fees': 0.001, 'min_leverage': 0.01, 'max_leverage': 0.5, 'trade_pair_category': 'crypto'}, 'order_type': 'SHORT', 'leverage': 0.01, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'BTCUSD', 'trade_pair': 'BTC/USD', 'fees': 0.001, 'min_leverage': 0.01, 'max_leverage': 0.5, 'trade_pair_category': 'crypto'}, 'order_type': 'FLAT', 'leverage': 0.01, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'BTCUSD', 'trade_pair': 'BTC/USD', 'fees': 0.001, 'min_leverage': 0.01, 'max_leverage': 0.5, 'trade_pair_category': 'crypto'}, 'order_type': 'FLAT', 'leverage': 0.01, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'BTCUSD', 'trade_pair': 'BTC/USD', 'fees': 0.001, 'min_leverage': 0.01, 'max_leverage': 0.5, 'trade_pair_category': 'crypto'}, 'order_type': 'SHORT', 'leverage': 0.01, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'BTCUSD', 'trade_pair': 'BTC/USD', 'fees': 0.001, 'min_leverage': 0.01, 'max_leverage': 0.5, 'trade_pair_category': 'crypto'}, 'order_type': 'FLAT', 'leverage': 0.01, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'BTCUSD', 'trade_pair': 'BTC/USD', 'fees': 0.001, 'min_leverage': 0.01, 'max_leverage': 0.5, 'trade_pair_category': 'crypto'}, 'order_type': 'LONG', 'leverage': 0.01, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'SHORT', 'leverage': -3.1285344073494294, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'FLAT', 'leverage': 3.1285344073494294, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'SHORT', 'leverage': -3.1285344073494294, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'FLAT', 'leverage': 3.1285344073494294, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'SHORT', 'leverage': -3.1285344073494294, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'FLAT', 'leverage': 3.1285344073494294, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'SHORT', 'leverage': -3.1285344073494294, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'FLAT', 'leverage': 3.1285344073494294, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'SHORT', 'leverage': -3.1285344073494294, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'FLAT', 'leverage': 3.1285344073494294, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'LONG', 'leverage': 3.1285344073494294, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'FLAT', 'leverage': -3.1285344073494294, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'BTCUSD', 'trade_pair': 'BTC/USD', 'fees': 0.001, 'min_leverage': 0.01, 'max_leverage': 0.5, 'trade_pair_category': 'crypto'}, 'order_type': 'FLAT', 'leverage': 0.01, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'LONG', 'leverage': 3.2285816609414812, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'FLAT', 'leverage': -3.2285816609414812, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'LONG', 'leverage': 3.2285816609414812, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'FLAT', 'leverage': -3.22858, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'FLAT', 'leverage': -3.22858, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}
+received data: {'trade_pair': {'trade_pair_id': 'SPX', 'trade_pair': 'SPX', 'fees': 9e-05, 'min_leverage': 0.1, 'max_leverage': 5, 'trade_pair_category': 'indices'}, 'order_type': 'FLAT', 'leverage': -3.2285816609414812, 'api_key': 'cvxEkaQjWD2P1phGmXSdf7n6h1sDTdiM'}

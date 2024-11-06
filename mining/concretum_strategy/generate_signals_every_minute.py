@@ -57,6 +57,8 @@ def main():
             return signal_generator.handle_market_opening()
         elif market_status == "REGULAR":
             return signal_generator.handle_regular_session()
+        elif market_status == "CLOSING":
+            return signal_generator.handle_market_closing()
         else:
             logging.error(f'{market_status} is not an accepted market status. Market status can be "OPENING", "REGULAR" or "CLOSED".')
             

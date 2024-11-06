@@ -1,1 +1,0 @@
-{"trade_pair": {"trade_pair_id": "SPX", "trade_pair": "SPX", "fees": 9e-05, "min_leverage": 0.1, "max_leverage": 5, "trade_pair_category": "indices"}, "order_type": "FLAT", "leverage": 0.01}

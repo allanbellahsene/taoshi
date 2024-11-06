@@ -78,9 +78,17 @@ def create_normalized_matrix(intraday_df: pd.DataFrame,
     # Convert caldt to datetime for both dataframes
     intraday_df = intraday_df.copy()
     daily_df = daily_df.copy()
+
+    logging.info(f'intraday_df: {intraday_df}')
     
-    intraday_df['datetime'] = pd.to_datetime(intraday_df['caldt'])
-    daily_df['datetime'] = pd.to_datetime(daily_df['caldt'])
+    intraday_df['datetime'] = pd.to_datetime(intraday_df['caldt'], utc=True)
+    daily_df['datetime'] = pd.to_datetime(daily_df['caldt'], utc=True)
+
+    intraday_df['datetime'] = intraday_df['datetime'].dt.tz_convert('America/New_York')
+    daily_df['datetime'] = daily_df['datetime'].dt.tz_convert('America/New_York')
+
+    logging.info('Type of datetime column of intraday_df:')
+    logging.info(type(intraday_df['datetime']))
     
     # Extract date and time for intraday data
     intraday_df['date'] = intraday_df['datetime'].dt.date

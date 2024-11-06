@@ -58,6 +58,7 @@ class SignalValidator:
         plt.plot(self.df['timestamp'], self.df['current_close'], label='Price', color='blue')
         plt.plot(self.df['timestamp'], self.df['upper_bound'], label='Upper Bound', color='gray', linestyle='--', alpha=0.7)
         plt.plot(self.df['timestamp'], self.df['lower_bound'], label='Lower Bound', color='gray', linestyle='--', alpha=0.7)
+        plt.plot(self.df['timestamp'], self.df['vwap'], label='VWAP', color='pink')
     
         
         # Long entries (0 to 1)
