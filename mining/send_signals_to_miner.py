@@ -98,8 +98,10 @@ def map_signal_data(symbol, current_position, position_size, signal_type, signal
         trade_pair = TradePair.SPX
     elif symbol == 'BTCUSDT':
         trade_pair = TradePair.BTCUSD
+    elif symbol == 'QQQ':
+        trade_pair = TradePair.NDX
     else:
-        raise ValueError(f'For now, symbol can only be SPY or BTCUSDT')
+        raise ValueError(f'For now, symbol can only be SPY, QQQ or BTCUSDT')
     
     if signal_type == 'entry':
         position_size = signal_direction * position_size

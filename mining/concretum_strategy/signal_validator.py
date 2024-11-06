@@ -6,7 +6,7 @@ from mining.utils import get_most_recent_signal_file
 #### ADD LOGIC TO FORCE EXIT IF STILL SIGNAL ON LAST MINUTE OF DAY
 
 class SignalValidator:
-    def __init__(self, df):
+    def __init__(self, df, asset):
         """
         Initialize the validator with a DataFrame containing trading signals.
         
@@ -20,6 +20,8 @@ class SignalValidator:
         """
         self.df = df.copy()
         self.df['timestamp'] = pd.to_datetime(self.df['timestamp'])
+        self.asset = asset
+        self.plot_path = SIGNALS_PLOT_PATH + f'{symbol}/'
     
     ### CHECK NUMBER OF SIGNALS GENERATED DURING THE DAY: LONG AND SHORTS
     ### CHECK THAT SIGNALS WERE CORRECTLY GENERATED
@@ -81,17 +83,17 @@ class SignalValidator:
         plt.scatter(short_exits['timestamp'], short_exits['current_close'], 
                    color='lime', marker='^', s=100, label='Short Exit')
         
-        plt.title('Trading Signals with Price Bounds', fontsize=12)
+        plt.title(f'{self.asset} Trading Signals with Price Bounds', fontsize=12)
         plt.xlabel('Time')
         plt.ylabel('Price')
         plt.grid(True, alpha=0.3)
         plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left')
         plt.xticks(rotation=45)
         plt.tight_layout()
-        plt.savefig(f'{SIGNALS_PLOT_PATH}{plot_title}.png')
+        plt.savefig(f'{self.plot_path}{plot_title}.png')
         return plt
 
-def run_signal_analysis(filename, plot_title):
+def run_signal_analysis(asset, filename, plot_title):
     """
     Main function to run all signal analysis.
     """
@@ -99,7 +101,7 @@ def run_signal_analysis(filename, plot_title):
     df = pd.read_csv(filename)
     
     # Initialize validator
-    validator = SignalValidator(df)
+    validator = SignalValidator(df, asset)
     
     # Run checks
     nb_signals = validator.count_signals()
@@ -113,10 +115,12 @@ def run_signal_analysis(filename, plot_title):
 
 if __name__ == "__main__":
     # Replace with your CSV file path
-    filename = get_most_recent_signal_file(SIGNALS_PATH)
-    filename = f'{SIGNALS_PATH}{filename}'
+    symbol = 'SPY'
+    signal_path = SIGNALS_PATH + f'{symbol}/'
+    filename = get_most_recent_signal_file(signal_path)
+    filename = f'{signal_path}{filename}'
     print(filename)
     plot_title = 'signals_plot' + filename[-14:-4]
-    validator, nb_signals, validity_results = run_signal_analysis(filename, plot_title)
+    validator, nb_signals, validity_results = run_signal_analysis(symbol, filename, plot_title)
     print(validity_results)
     print(nb_signals)

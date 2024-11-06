@@ -17,6 +17,7 @@ from dotenv import load_dotenv
 from mining.data_checks import MarketCalendar, is_market_open_today
 from mining.concretum_strategy.market_session import MarketSession
 from mining.concretum_strategy.signal_generator import SignalGenerator
+from mining.concretum_strategy.config import symbols, allocations
 
 # Setup logging
 logging.basicConfig(
@@ -33,12 +34,12 @@ load_dotenv()
 api_key = os.getenv("API_KEY")
 api_secret = os.getenv("API_SECRET")
 
-def main():
+def main(asset):
     """Main execution function"""
     try:
         # Initialize components
         calendar = MarketCalendar()
-        signal_generator = SignalGenerator()
+        signal_generator = SignalGenerator(asset)
         
         # Check if market is open
         if not is_market_open_today(calendar):
@@ -67,7 +68,9 @@ def main():
         raise
 
 if __name__ == "__main__":
-    main()
+    for symbol in symbols:
+        allocation = allocations[symbol]
+        main(symbol)
 
 
 

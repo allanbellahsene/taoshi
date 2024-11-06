@@ -6,7 +6,6 @@ import pandas as pd
 from datetime import datetime, timedelta
 from mining.utils import create_normalized_matrix
 from mining.concretum_strategy.config import (
-    symbol, 
     rolling_window, 
     band_mult,
     LIVE_DATA_PATH,
@@ -30,8 +29,8 @@ logging.basicConfig(
 class SignalGenerator:
     """Handles signal generation logic"""
     
-    def __init__(self):
-        self.data_manager = DataManager()
+    def __init__(self, asset):
+        self.data_manager = DataManager(asset)
         self.position_sizing = PositionSizing()
         self.intra_data, self.daily_data = self.data_manager.load_historical_data()
         #logging.info(f'Intra data: {self.intra_data}')
@@ -41,6 +40,9 @@ class SignalGenerator:
         self.position_size = self.position_sizing.calculate_size(self.current_vol)
         self.last_signal_time = None
         self.pending_signal = None
+        self.asset = asset
+        self.live_path = LIVE_DATA_PATH + f'{self.asset}/'
+        self.signal_path = SIGNALS_PATH + f'{self.asset}/'
         
         try:
             signal_data = pd.read_csv(f'{SIGNALS_PATH}signal_history_{self.data_manager.end_date}.csv')
@@ -82,11 +84,13 @@ class SignalGenerator:
             # Load required data
             #logging.info(f'End date: {self.data_manager.end_date}')
             #print(f'End date: {self.data_manager.end_date}')
-            open_data = pd.read_csv(f'{LIVE_DATA_PATH}{symbol}-{self.data_manager.end_date}-open_live-data.csv')
+            filename = f'{self.asset}-{self.data_manager.end_date}-open_live-data.csv'
+            filepath = os.path.join(self.live_path, filename)
+            open_data = pd.read_csv(filepath)
             current_bars = self.data_manager.get_live_data()
 
             try:
-                cumulative_data = pd.read_csv(f'{SIGNALS_PATH}signal_history_{self.data_manager.end_date}.csv')
+                cumulative_data = pd.read_csv(f'{self.signal_path}signal_history_{self.data_manager.end_date}.csv')
                 vwap = self.calculate_vwap(cumulative_data)
             except Exception as e:
                 logging.error(f"Error calculating VWAP: {str(e)}")
@@ -143,7 +147,7 @@ class SignalGenerator:
     
     def handle_market_closing(self):
         if self.current_position != 0:
-            signal_data = map_signal_data(symbol, self.current_position, 
+            signal_data = map_signal_data(self.asset, self.current_position, 
             self.position_size, signal_type='exit', signal_direction=-self.current_position)
             signal_json = send_signals(signal_data)
             logging.info('NEW SIGNAL GENERATED')
@@ -192,9 +196,9 @@ class SignalGenerator:
         # Only execute trades if we're at a valid trading interval
         if execute_trades and self.current_position != signal:
             signal_type = 'entry' if self.current_position == 0 else 'exit'
-            signal_data = map_signal_data(symbol, self.current_position, self.position_size, signal_type, signal)
+            signal_data = map_signal_data(self.asset, self.current_position, self.position_size, signal_type, signal)
             signal_json = send_signals(signal_data)
-            logging.info('NEW SIGNAL GENERATED')
+            logging.info(f'NEW SIGNAL GENERATED for {self.asset}')
             logging.info(f'Trading window: {datetime.now(pytz.timezone("America/New_York")).strftime("%H:%M")}')
             logging.info(signal_json)
             self.current_position = signal
@@ -224,6 +228,7 @@ class SignalGenerator:
         }
         
         logging.info(f"""
+        Symbol: {self.asset}
         Time: {metadata['timestamp']}
         Signal: {signal}
         Position Size: {self.position_size}
@@ -238,9 +243,9 @@ class SignalGenerator:
         try:
             signal_history = pd.DataFrame([metadata])
             signal_history.to_csv(
-                f'{SIGNALS_PATH}signal_history_{self.data_manager.end_date}.csv',
+                f'{self.signal_path}signal_history_{self.data_manager.end_date}.csv',
                 mode='a',
-                header=not os.path.exists(f'{SIGNALS_PATH}signal_history_{self.data_manager.end_date}.csv'),
+                header=not os.path.exists(f'{self.signal_path}signal_history_{self.data_manager.end_date}.csv'),
                 index=False
             )
         except Exception as e:
@@ -249,7 +254,7 @@ class SignalGenerator:
         return metadata
 
 if __name__ == "__main__":
-    signal_generator = SignalGenerator()
+    signal_generator = SignalGenerator('SPY')
     print(signal_generator.handle_market_opening())
     #print(signal_generator.handle_regular_session())
 

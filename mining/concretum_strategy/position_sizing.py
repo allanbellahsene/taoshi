@@ -32,12 +32,13 @@ class PositionSizing:
         return np.minimum(self.max_leverage, self.vol_target / vol_estimate)
 
 if __name__ == "__main__":
+    symbol = 'QQQ'
     from mining.concretum_strategy.data_manager import DataManager
-    data_manager = DataManager()
+    data_manager = DataManager(symbol)
     _, daily_data = data_manager.load_historical_data()
     position_sizing = PositionSizing()
     vol = position_sizing.calculate_daily_vol(daily_data)
     signal = -1
-    print(position_sizing.calculate_size(signal, vol))
+    print(position_sizing.calculate_size(vol))
     print(vol)
 
